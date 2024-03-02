@@ -5,9 +5,7 @@ const router = express.Router();
 const authController = require ("../controllers/authControllers")
 //dirige l'utilisateur vers la page d'authentification
 router.post ("/login",authController.login)
-
-
-
+router.post ("/register", authController.register)
 
 
 module.exports = router
