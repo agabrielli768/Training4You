@@ -1,3 +1,4 @@
+"use strict";
 //on importe le module JWT
 const jwt = require("jsonwebtoken");
 //on lui assigne une phrase secrète

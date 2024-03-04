@@ -1,3 +1,4 @@
+"use strict";
 //import du framework Express
 const express = require("express");
 //creation d'une nouvelle instance d'express

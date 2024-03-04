@@ -1,3 +1,4 @@
+"use strict";
 const database = require("../database/database");
 const programmeMapper = require("../mapper/programme");
 
@@ -16,7 +17,6 @@ const getProgramme = () => {
 };
 
 const addProgramme = (p) => {
-  console.log(p);
   return new Promise((resolve, reject) => {
     database.query(
       "insert into programme (nom,type,duree,id_createur) values (?,?,?,?)",
@@ -31,6 +31,23 @@ const addProgramme = (p) => {
     );
   });
 };
+
+const putProgramme = (programme) => {
+  return new Promise((resolve, reject) => {
+    console.log(programme)
+  database.query(
+    "update programme SET nom =?,type =?,duree=?,id_createur=?  where id=?",
+    [programme.nom, programme.type, programme.duree, programme.id_createur, programme.id],
+    (error, result) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(result.updateId);
+      }
+    }
+  )
+})
+}
 
 const removeProgramme = (id) => {
   return new Promise((resolve, reject) => {
@@ -48,4 +65,20 @@ const removeProgramme = (id) => {
   });
 };
 
-module.exports = { getProgramme, addProgramme, removeProgramme };
+const getProgrammeById = (id) => {
+  return new Promise((resolve, reject) => {
+    database.query(
+      "SELECT * FROM programme WHERE id=? limit 1",
+      [id],
+      (error, result) => {
+        if (error || !result) {
+          reject(error);
+        } else {
+          resolve(result);
+        }
+      }
+    );
+  });
+};
+
+module.exports = { getProgramme, addProgramme, putProgramme, removeProgramme, getProgrammeById };

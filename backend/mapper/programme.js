@@ -1,3 +1,4 @@
+"use strict";
 const Programme = require("../entities/Programmes");
 
 //mappage de l'entité user avec la table compte_utilisateur

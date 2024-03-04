@@ -1,3 +1,4 @@
+"use strict";
 const database = require("../database/database");
 const { userMapper } = require("../mapper/user");
 //on recupere l'email et le mot de passe de l'utilisateur de la DB

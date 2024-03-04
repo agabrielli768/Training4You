@@ -1,3 +1,4 @@
+"use strict";
 const bcrypt = require("bcrypt");
 
 //on importe users.services qui contient les fonctions pour interagir avec les utilisateurs de la BDD

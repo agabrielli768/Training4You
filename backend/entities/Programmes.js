@@ -1,3 +1,4 @@
+"use strict";
 class Programme {
     constructor (id, nom, type, duree, id_createur) {
         this.id = id;

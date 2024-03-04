@@ -1,3 +1,4 @@
+"use strict";
 class CompteUtilisateur {
     constructor (id,email,password,prenom,nom,role) {
         this.id = id;

@@ -1,12 +1,14 @@
-const express = require ("express");
+"use strict";
+const express = require("express");
 const router = express.Router();
-const programmesController = require ("../controllers/programmes")
-const isAdmin = require ("../middleware/isAdmin")
+const programmesController = require("../controllers/programmes");
+const isAdmin = require("../middleware/isAdmin");
 
-router.get ("/", programmesController.getProgramme)
-router.post ("/",isAdmin,programmesController.addProgramme)
+router.get("/", programmesController.getProgramme);
+router.get("/:id", isAdmin, programmesController.getProgrammeById);
+router.post("/", isAdmin, programmesController.addProgramme);
 
-router.put("/:id", isAdmin, programmesController.putProgramme)
-router.delete("/:id", isAdmin, programmesController.removeProgramme)
+router.put("/:id", isAdmin, programmesController.putProgramme);
+router.delete("/:id", isAdmin, programmesController.removeProgramme);
 
-module.exports = router
+module.exports = router;

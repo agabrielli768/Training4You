@@ -1,3 +1,4 @@
+"use strict";
 require ("dotenv").config();
 //informations pour creer une connexion avec la DB
 const mysql = require("mysql2");

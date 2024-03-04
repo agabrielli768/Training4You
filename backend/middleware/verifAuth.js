@@ -1,3 +1,4 @@
+"use strict";
 const { verifyToken } = require("../utils/jwtHelper");
 //verifie le token et extrait l'utilisateur sinon error
 const verifAuth = (req, res, next) => {
@@ -11,6 +12,7 @@ const verifAuth = (req, res, next) => {
     res.sendStatus(403)
     return;
   }
+  //on verifie l'id et le role de l'utilisateur lors de l'authentification
   req.user = {
     id: user.id,
     role: user.role,

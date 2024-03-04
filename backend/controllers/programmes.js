@@ -1,3 +1,4 @@
+"use strict";
 const programmeServices = require("../services/programme.services");
 const Programme = require("../entities/Programmes");
 const getProgramme = async (_, res) => {
@@ -27,12 +28,26 @@ const addProgramme = async (req, res) => {
   }
 };
 
-const putProgramme = async (req, res ) => {
-    const idProgramme = req.params.id;
-    const {name, type, duree } = req.body;
-
-    //TODO appel service
-}
+const putProgramme = async (req, res) => {
+  const idProgramme = req.params.id;
+  const { nom, type, duree } = req.body;
+  const updateProgramme = {
+    id: idProgramme,
+    nom,
+    type,
+    duree,
+    id_createur: req.user.id,
+  };
+  try {
+    const programmeId = await programmeServices.putProgramme(
+      updateProgramme
+    );
+    res.send({ message: "Programme updated successfully", programmeId });
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+};
 
 const removeProgramme = async (req, res) => {
   const idProgramme = req.params.id;
@@ -45,4 +60,24 @@ const removeProgramme = async (req, res) => {
   }
 };
 
-module.exports = { getProgramme, addProgramme, removeProgramme };
+const getProgrammeById = async (req, res) => {
+  const idProgramme = req.params.id;
+
+  try {
+    const programme = await programmeServices.getProgrammeById(idProgramme);
+    if (programme && programme.length === 1) {
+      res.send(programme[0]);
+    }
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(400);
+  }
+};
+
+module.exports = {
+  getProgramme,
+  addProgramme,
+  putProgramme,
+  removeProgramme,
+  getProgrammeById,
+};

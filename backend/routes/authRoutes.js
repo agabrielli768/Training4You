@@ -1,3 +1,4 @@
+"use strict";
 //on importe express et la fonction Router ()
 const express = require ("express");
 const router = express.Router();
