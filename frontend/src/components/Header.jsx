@@ -10,7 +10,7 @@ function Header(props) {
   };
   return (
     <div>
-      <nav className="navbar fixed-top navbar-dark" style={navStyle}>
+      <nav className="navbar sticky-top navbar-dark" style={navStyle}>
         <div className="container-fluid">
           <div className="navbar-brand">
             <img
