@@ -12,21 +12,26 @@ const login = async (req, res) => {
   const { email, password } = req.body;
 
   //on recupere l'email et le mot de passe de l'utilisateur du fichier userServices
-  const user = await userServices.getUserByEmail(email);
-  if (user.length === 0) {
+  const user = await userServices.isRegistered(email);
+  if (user == null) {
     res.sendStatus(403);
     return;
   }
+
+  if (user == undefined) {
+    res.sendStatus(500);
+    return;
+  }
   //on compare le mot de passe saisit par l'utilisateur et le mot de passe hashé en BDD
-  const result = await bcrypt.compare(password, user[0].password);
+  const result = await bcrypt.compare(password, user.password);
   if (!result) {
     res.sendStatus(403);
     return;
   }
   // on crée un objet avec l'identifiant et le role de l'utilisateur
   const payload = {
-    id: user[0].id,
-    role: user[0].role,
+    id: user.id,
+    role: user.role,
   };
   //generation du token avec les informations de l'utilisateur du payload
   const token = tokenHelper.token(payload);
@@ -36,16 +41,21 @@ const login = async (req, res) => {
 // Inscription a l'application
 const register = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
-  const hash = await bcrypt.hash(password, 5);
-  //Vérification si l email n'est deja pas existant
-  const user = await userServices.getUserByEmail(email);
-  if (user.length !== 0) {
+  // Appel la méthode isRegistered
+  const isRegistered = await userServices.isRegistered(email);
+  if (isRegistered) {
     res.sendStatus(403);
     return;
   }
+  const hash = await bcrypt.hash(password, 5);
   // Creation d'un nouvel utilisateur
-  const id = userServices.addUser(firstName, lastName, email, hash);
+  const id = await userServices.createUser(firstName, lastName, email, hash);
+  //TODO addTODO pour tout les programme de cette user
 
+  if (!id) {
+    res.sendStatus(500);
+    return;
+  }
   const payload = {
     id,
     role: "user",

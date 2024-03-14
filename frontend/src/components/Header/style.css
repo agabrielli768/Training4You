@@ -1,0 +1,49 @@
+.header {
+  background-color: var(--placeholder);
+  /*height: 48px;*/
+  /* position:; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .sub {
+  display: flex;
+}
+
+.header .text-wrapper {
+  -webkit-text-stroke: 1px #fe5300;
+  border-color: var(--orange);
+  color: var(--orange);
+  font-family: var(--promesse-font-family);
+  font-size: var(--promesse-font-size);
+  font-style: var(--promesse-font-style);
+  font-weight: var(--promesse-font-weight);
+  height: 48px;
+  left: -1px;
+  letter-spacing: var(--promesse-letter-spacing);
+  line-height: var(--promesse-line-height);
+  /* position:; */
+  text-align: center;
+  top: -2px;
+  width: 80px;
+}
+
+.header .design-component-instance-node {
+  left: 92px !important;
+  /* position:!important; */
+  top: 14px !important;
+}
+
+.header .sign-in {
+  height: 35px;
+  left: 305px;
+  /* position:; */
+  top: 7px;
+  width: 35px;
+}
+
+.header .burger-menu-instance {
+  left: 376px !important;
+  /* position: !important; */
+  top: 14px !important;
+}

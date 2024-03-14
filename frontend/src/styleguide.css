@@ -1,0 +1,37 @@
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --blue: rgba(52, 91, 235, 1);
+    --bold-titles-font-family: "Roboto", Helvetica;
+    --bold-titles-font-size: 20px;
+    --bold-titles-font-style: normal;
+    --bold-titles-font-weight: 700;
+    --bold-titles-letter-spacing: 0px;
+    --bold-titles-line-height: normal;
+    --button-semi-bold-font-family: "Roboto", Helvetica;
+    --button-semi-bold-font-size: 12px;
+    --button-semi-bold-font-style: normal;
+    --button-semi-bold-font-weight: 600;
+    --button-semi-bold-letter-spacing: 0px;
+    --button-semi-bold-line-height: normal;
+    --grey-shapes-wireframe: rgba(232, 232, 232, 1);
+    --light-blue: rgba(21, 181, 244, 1);
+    --orange: rgba(254, 83, 0, 1);
+    --paragraph-title-font-family: "Roboto", Helvetica;
+    --paragraph-title-font-size: 18px;
+    --paragraph-title-font-style: normal;
+    --paragraph-title-font-weight: 600;
+    --paragraph-title-letter-spacing: 0px;
+    --paragraph-title-line-height: normal;
+    --placeholder: rgba(163, 163, 163, 1);
+    --promesse-font-family: "Vujahday Script", Helvetica;
+    --promesse-font-size: 18px;
+    --promesse-font-style: normal;
+    --promesse-font-weight: 400;
+    --promesse-letter-spacing: 0px;
+    --promesse-line-height: normal;
+    --titles: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    --variable-collection-black: rgba(0, 0, 0, 1);
+    --variable-collection-blue: rgba(52, 91, 235, 1);
+    --white: rgba(255, 255, 255, 1);
+  }
+  

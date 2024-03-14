@@ -1,0 +1,15 @@
+.component {
+    align-items: center;
+    display: inline-flex;
+    gap: 14px;
+    justify-content: center;
+    /* position:; */
+  }
+  
+  .component .img {
+    height: 28px;
+    object-fit: cover;
+    /* position:; */
+    width: 28px;
+  }
+  

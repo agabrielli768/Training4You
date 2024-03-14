@@ -6,7 +6,8 @@ const isAdmin = require("../middleware/isAdmin");
 
 router.get("/", programmesController.getProgramme);
 router.get("/:id", isAdmin, programmesController.getProgrammeById);
-router.post("/", isAdmin, programmesController.addProgramme);
+router.put("/", isAdmin, programmesController.addProgramme);
+router.post("/:id/:etat", programmesController.manageProgrammeState);
 
 router.put("/:id", isAdmin, programmesController.putProgramme);
 router.delete("/:id", isAdmin, programmesController.removeProgramme);

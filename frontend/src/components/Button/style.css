@@ -1,0 +1,30 @@
+.button {
+    all: unset;
+    align-items: center;
+    box-sizing: border-box;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    /* position:; */
+  }
+  
+  .button .text-wrapper {
+    font-family: "Roboto", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    /* position:; */
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .button .accueil {
+    color: #000000;
+  }
+  
+  .button .default {
+    color: #00000066;
+  }

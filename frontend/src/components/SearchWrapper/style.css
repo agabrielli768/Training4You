@@ -1,0 +1,14 @@
+.search-wrapper {
+  background-color: var(--black);
+  height: 20px;
+  /* position:; */
+  width: 20px;
+}
+
+.search-wrapper .search-1 {
+  height: 20px !important;
+  left: 0 !important;
+  /* position:!important; */
+  top: 0 !important;
+  width: 20px !important;
+}
