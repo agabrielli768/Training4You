@@ -86,32 +86,10 @@ const getProgrammeById = (id) => {
   });
 };
 
-const manageProgrammeState = (realiser) => {
-  return new Promise((resolve, reject) => {
-    database.query(
-      "UPDATE realiser SET id_Compte_Utilisateur=?, date_realisation =?, where id =?",
-      [
-        realiser.id_Compte_Utilisateur,
-        realiser.date_realisation,
-        realiser.statut,
-        realiser.id
-      ],
-      (error, result) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(result.updateId);
-        }
-      }
-    );
-  });
-};
-
 module.exports = {
   getProgramme,
   addProgramme,
   putProgramme,
   removeProgramme,
   getProgrammeById,
-  manageProgrammeState,
 };

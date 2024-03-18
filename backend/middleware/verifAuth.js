@@ -4,12 +4,13 @@ const { verifyToken } = require("../utils/jwtHelper");
 const verifAuth = (req, res, next) => {
   const auth = req.headers.authorization;
   if (!auth) {
-    res.sendStatus(403)
+    res.sendStatus(403);
     return;
   }
   const user = verifyToken(auth.split(" ")[1]);
+
   if (!user || !user.id || !user.role) {
-    res.sendStatus(403)
+    res.sendStatus(403);
     return;
   }
   //on verifie l'id et le role de l'utilisateur lors de l'authentification

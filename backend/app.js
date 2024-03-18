@@ -9,11 +9,13 @@ const port = 3001;
 //importation et utilisation des routes d'authentification
 const authRoutes = require("./routes/authRoutes");
 const programmeRoutes = require ("./routes/programmeRoutes");
+const realiserRoutes = require("./routes/realiserRoutes")
 const verifAuth = require ("./middleware/verifAuth")
 app.use (express.json());
 app.use (cors())
 app.use("/auth", authRoutes);
 app.use ("/programmes",verifAuth, programmeRoutes);
+app.use ("/realiser",verifAuth, realiserRoutes);
 //on demarre le serveur et ecoute le port definit ci dessus
 app.listen(port, (erreur) => {
   if (erreur) {

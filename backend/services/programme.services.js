@@ -11,6 +11,4 @@ const removeProgramme = programmeRepository.removeProgramme;
 
 const getProgrammeById = programmeRepository.getProgrammeById;
 
-const manageProgrammeState = programmeRepository.manageProgrammeState;
-
-module.exports = { getProgramme, addProgramme, putProgramme, removeProgramme, getProgrammeById, manageProgrammeState };
+module.exports = { getProgramme, addProgramme, putProgramme, removeProgramme, getProgrammeById };

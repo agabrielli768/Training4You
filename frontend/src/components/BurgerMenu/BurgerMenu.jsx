@@ -5,7 +5,6 @@ import "./style.css";
 const BurgerMenu = ({ className }) => {
   const [isActive, setIsActive] = useState(false)
   const manageOpenClass = () => {
-    console.log("toto")
     setIsActive(!isActive)
   }
   return (

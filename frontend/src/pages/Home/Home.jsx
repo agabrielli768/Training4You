@@ -8,13 +8,6 @@ function HomePage() {
   return (
     <div>
       <div className="home">
-        <div className="div-2">
-          <img
-            className="title"
-            alt="Title"
-            src="https://c.animaapp.com/3qAMEnpQ/img/title.png"
-          />
-        </div>
         <div className="text-wrapper-2">TOUJOURS AVEC VOUS</div>
         <div className="overlap">
           <Link className="text-wrapper-3" to="/registration">

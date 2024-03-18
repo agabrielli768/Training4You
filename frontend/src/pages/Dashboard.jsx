@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  const navigate = useNavigate();
+  const isLogin = localStorage.getItem("token");
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+  useEffect(() => {
+    if (!isLogin) {
+      navigate("/");
+    }
+  });
   return (
     <div className="dashboard">
       <div className="div-2">
@@ -87,6 +100,7 @@ function Dashboard() {
         <div className="group-10">
           <div className="overlap-2">
             <div className="text-wrapper-9">Découvre la recette</div>
+            <button onClick={logout}>Se déconnecter</button>
           </div>
         </div>
       </div>

@@ -6,6 +6,8 @@ const userServices = require("../services/user.services");
 //on importe jwtHelper pour gerer les tokens JWT
 const tokenHelper = require("../utils/jwtHelper");
 
+const realiserServices = require("../services/realiser.service");
+
 //la fonction login pour gerer la connexion des utilisateurs avec req en requete entrante et res en requete sortante
 const login = async (req, res) => {
   //extraction des attributs email et password de la requete
@@ -56,6 +58,8 @@ const register = async (req, res) => {
     res.sendStatus(500);
     return;
   }
+
+  await realiserServices.addAllRealiser(id);
   const payload = {
     id,
     role: "user",

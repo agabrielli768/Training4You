@@ -7,7 +7,7 @@ function Programme() {
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get("http://localhost:3001/programmes", {
+      .get("http://localhost:3001/realiser", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -20,12 +20,23 @@ function Programme() {
         console.log(error);
         //TODO afficher un message d'erreur
       });
-  }, [navigate]);
+  }, []);
 
   const manageProgramme = (id, state) => {
-    axios.post(`http://localhost:3001/programmes/"${id}"/${state}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    axios
+      .post(
+        `http://localhost:3001/realiser/${id}/${state}`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((_) => {
+        window.location.reload();
+      })
+      .catch((_) => {
+        alert("Une erreur est survenue");
+      });
   };
   return (
     <div>
@@ -35,14 +46,23 @@ function Programme() {
           <li>
             <div className="programme">
               <h2>{p.nom}</h2>
-              <p>type : {p.type}</p>
-              <p>duree: {p.duree}</p>
-              <button onClick={() => manageProgramme(p.id, "commence")}>
-                Start
-              </button>
-              <button onClick={() => manageProgramme(p.id, "termine")}>
-                Done
-              </button>
+              <p>type : {p.programme.type}</p>
+              <p>duree: {p.programme.duree}</p>
+              {p.statut === "a realiser" ? (
+                <button
+                  onClick={() => manageProgramme(p.programme.id, "en cours")}
+                >
+                  Commencer
+                </button>
+              ) : p.statut === "en cours" ? (
+                <button
+                  onClick={() => manageProgramme(p.programme.id, "realise")}
+                >
+                  Terminer
+                </button>
+              ) : (
+                "Terminé"
+              )}
             </div>
           </li>
         ))}
