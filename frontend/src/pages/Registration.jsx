@@ -29,7 +29,7 @@ function Registration() {
       })
       //on attend la creation du token pour rediriger l'utilisateur vers sa page d'accueil
       .then((reponse) => {
-        localStorage.setItem('token', reponse.data)
+        localStorage.setItem("token", reponse.data);
         navigate("/dashboard");
       })
       .catch((error) => {
@@ -40,7 +40,7 @@ function Registration() {
   return (
     <div>
       <h2>Inscription</h2>
-      <form onSubmit={handleSubmit}>
+      <form id="register-form" onSubmit={handleSubmit}>
         <label for="lastname">Votre nom:</label>
         <input
           type="text"

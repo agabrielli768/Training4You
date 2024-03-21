@@ -18,7 +18,6 @@ function Programme() {
           navigate("/");
         }
         console.log(error);
-        //TODO afficher un message d'erreur
       });
   }, []);
 
@@ -32,6 +31,7 @@ function Programme() {
         }
       )
       .then((_) => {
+        //Recharge automatiquement la page
         window.location.reload();
       })
       .catch((_) => {
