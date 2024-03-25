@@ -19,7 +19,7 @@ function Programme() {
         }
         console.log(error);
       });
-  }, []);
+  },);
 
   const manageProgramme = (id, state) => {
     axios

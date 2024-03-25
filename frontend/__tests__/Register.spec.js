@@ -1,8 +1,16 @@
-import { jest } from "@jest/globals";
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import axios from 'axios';
 import Registration from "../src/pages/Registration";
-import { fireEvent, render, screen } from "@testing-library/react";
-import axios from "axios";
+
 jest.mock("axios");
+
+const mockNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockNavigate,
+}));
 
 const updateInputValue = (id, value) => {
   fireEvent.change(screen.getByTestId(id), {
@@ -13,11 +21,19 @@ const updateInputValue = (id, value) => {
 };
 
 describe("Test register", () => {
-  test("should register the user into the app", () => {
+  beforeEach(() => {
+    mockNavigate.mockClear();
+    axios.post.mockClear();
+  });
+
+  test("should register the user into the app", async () => {
     // GIVEN
-    // Affichage de la page d'inscription
-    render(<Registration />);
-    axios.post.mockResolvedValueOnce({ token: "abcd" });
+    render(
+      <Router>
+        <Registration />
+      </Router>
+    );
+    axios.post.mockResolvedValueOnce({ data: { token: "abcd" } });
 
     // WHEN
     updateInputValue("lastname", "lennon");
@@ -25,9 +41,17 @@ describe("Test register", () => {
     updateInputValue("email", "john.lennon@beatles.com");
     updateInputValue("password", "letitbe");
     updateInputValue("confirm_password", "letitbe");
-    fireEvent.submit(screen.getByTestId("register-form"));
+    fireEvent.click(screen.getByRole('button', { name: /Creez votre compte/i }));
 
-    // THEN
-    expect(mockuseNavigate).toHaveBeenCalled("/dashboard");
+    await waitFor(() => {
+      expect(mockNavigate).toHaveBeenCalledWith('/dashboard');
+    });
+
+    expect(axios.post).toHaveBeenCalledWith("http://localhost:3001/auth/register", {
+      firstName: "John",
+      lastName: "Lennon",
+      email: "john.lennon@beatles.com",
+      password: "letitbe",
+    });
   });
 });

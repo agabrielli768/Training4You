@@ -7,8 +7,9 @@ import "./style.css";
 function HomePage() {
   return (
     <div>
-      <div className="home">
-        <div className="text-wrapper-2">TOUJOURS AVEC VOUS</div>
+      <div className="container">
+        <div className="text-wrapper-2">training 4 you</div>
+        <div className="text-wrapper-2">toujours avec vous</div>
         <div className="overlap">
           <Link className="text-wrapper-3" to="/registration">
             S'inscrire
@@ -78,41 +79,45 @@ function HomePage() {
           alt="Line"
           src="https://c.animaapp.com/3qAMEnpQ/img/line-1.svg"
         />
-        <div className="text-wrapper-8">A propos de</div>
-        <Footer className="component-1" />
-        <div className="overlap-wrapper">
-          <div className="overlap-2">
-            <p className="p">
-              <span className="text-wrapper-9">Julie: “</span>
-              <span className="span">
-                {" "}
-                Depuis plusieurs semaines, je cherchais des programmes
-                d’entrainements pour femmes enceintes”
-              </span>
-            </p>
-            <div className="group-4">
-              <div className="overlap-group-2">
-                <div className="text-wrapper-10">Découvrez la suite</div>
+        <div className="flex">
+          <div className="overlap-wrapper">
+            <div className="overlap-2">
+              <p className="p">
+                <span className="text-wrapper-9">Julie: “</span>
+                <span className="span">
+                  {" "}
+                  Depuis plusieurs semaines, je cherchais des programmes
+                  d’entrainements pour femmes enceintes”
+                </span>
+              </p>
+              <div className="group-4">
+                <div className="overlap-group-2">
+                  <div className="text-wrapper-10">Découvrez la suite</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="group-5">
+            <div className="overlap-2">
+              <p className="p">
+                <span className="text-wrapper-9">Romain: “</span>
+                <span className="span">
+                  {" "}
+                  Grâce aux tutoriels vidéos, je peux réaliser les mouvements
+                  avec la bonne technique.”
+                </span>
+              </p>
+              <div className="group-4">
+                <div className="overlap-group-2">
+                  <div className="text-wrapper-10">Découvrez la suite</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="group-5">
-          <div className="overlap-2">
-            <p className="p">
-              <span className="text-wrapper-9">Romain: “</span>
-              <span className="span">
-                {" "}
-                Grâce aux tutoriels vidéos, je peux réaliser les mouvements avec
-                la bonne technique.”
-              </span>
-            </p>
-            <div className="group-4">
-              <div className="overlap-group-2">
-                <div className="text-wrapper-10">Découvrez la suite</div>
-              </div>
-            </div>
-          </div>
+        <div className="flex">
+          <div className="text-wrapper-8">A propos de</div>
+          <Footer className="component-1" />
         </div>
       </div>
     </div>

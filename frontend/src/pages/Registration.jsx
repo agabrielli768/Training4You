@@ -1,7 +1,8 @@
 import React from "react";
-import axios from "axios";
-//redirige l'utilisateur vers sa page d'accueil
 import { useNavigate } from "react-router-dom";
+import axios from "axios"
+//redirige l'utilisateur vers sa page d'accueil
+
 
 //composant d'inscription
 function Registration() {
@@ -43,6 +44,7 @@ function Registration() {
       <form id="register-form" onSubmit={handleSubmit}>
         <label for="lastname">Votre nom:</label>
         <input
+          data-testid="lastname"
           type="text"
           name="lastname"
           id="lastname"
@@ -51,6 +53,7 @@ function Registration() {
         />
         <label for="firstname">Votre prénom:</label>
         <input
+          data-testid="firstname"
           type="text"
           name="firstname"
           id="firstname"
@@ -59,6 +62,7 @@ function Registration() {
         />
         <label for="email">Votre adresse email:</label>
         <input
+          data-testid="email"
           type="email"
           name="email"
           id="email"
@@ -67,6 +71,7 @@ function Registration() {
         />
         <label for="password">Votre mot de passe:</label>
         <input
+          data-testid="password"
           type="password"
           name="password"
           id="password"
@@ -76,6 +81,7 @@ function Registration() {
 
         <label for="confirm_password">Confirmez votre mot de passe:</label>
         <input
+          data-testid="confirm_password"
           type="password"
           name="confirm_password"
           id="confirm_password"
