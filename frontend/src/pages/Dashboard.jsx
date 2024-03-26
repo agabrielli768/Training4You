@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import "./Home/style.css";
 import { Link } from "react-router-dom";
 
+
 function Dashboard() {
-  let name = ""; //TODO ustate
+  const [name, setName] = useState ('')
+  const handleConnexion = () => {
+    setName ('')
+  }
   const navigate = useNavigate();
   const isLogin = localStorage.getItem("token");
 
@@ -27,27 +31,44 @@ function Dashboard() {
         state="default"
         text="Accueil &gt;&gt;"
       />
-      <div className="text-wrapper-2">bienvenue {name}</div>
+      <div className="text-wrapper-2">Bienvenue {name}</div>
       <div className="overlap">
-        <Link className="text-wrapper-3" to="/dashboard">
+        <Link className="text-wrapper-3" to="/programme">
           Programmes réalisés
         </Link>
-        <Link className="text-wrapper-3" to="/dashboard">
+        <Button
+          className="button-instance"
+          state="default"
+          text="Accueil &gt;&gt;"
+        />
+        <Link className="text-wrapper-3" to="/programme">
           Exercices réalisés
         </Link>
-        <Link className="text-wrapper-3" to="/dashboard">
+        <Button
+          className="button-instance"
+          state="default"
+          text="Accueil &gt;&gt;"
+        />
+        <Link className="text-wrapper-3" to="/programme">
           Programmes en cours
         </Link>
-        <Link className="text-wrapper-3" to="/dashboard">
+        <Button
+          className="button-instance"
+          state="default"
+          text="Accueil &gt;&gt;"
+        />
+        <Link className="text-wrapper-3" to="/programme">
           Mes Favoris
         </Link>
+        <Button
+          className="button-instance"
+          state="default"
+          text="Accueil &gt;&gt;"
+        />
       </div>
       <div className="text-wrapper-4">ACTUALITES</div>
       <div className="group">
         <div className="group-2">
-          <div className="div-wrapper">
-            <div className="text-wrapper-3">ACTUALITES</div>
-          </div>
           <div className="overlap">
             <div className="group-3">
               <img
@@ -88,29 +109,7 @@ function Dashboard() {
         src="https://c.animaapp.com/bDc8z2Pf/img/line-1.svg"
       />
       <div className="text-wrapper-4">A propos de</div>
-      <div className="bienvenue-anthony">BIENVENUE ANTHONY</div>
-      <div className="group-6">
-        <div className="group-7">
-          <div className="overlap-group-2">
-            <div className="text-wrapper-5">Programmes réalisés</div>
-          </div>
-        </div>
-        <div className="overlap-wrapper">
-          <div className="overlap-group-2">
-            <div className="text-wrapper-5">Programmes en cours</div>
-          </div>
-        </div>
-        <div className="group-8">
-          <div className="overlap-group-2">
-            <div className="text-wrapper-6">Mes favoris</div>
-          </div>
-        </div>
-        <div className="group-9">
-          <div className="overlap-group-2">
-            <div className="text-wrapper-5">Exercices réalisés</div>
-          </div>
-        </div>
-      </div>
+      
       <div className="frame" />
       <div className="text-wrapper-7">LA RECETTE DU MOIS</div>
       <div className="text-wrapper-8">Salade d’avocats aux crevettes</div>
@@ -122,6 +121,6 @@ function Dashboard() {
       </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
