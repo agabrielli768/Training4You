@@ -7,14 +7,14 @@
 .container .div-2 {
   background-color: var(--grey-shapes-wireframe);
   height: 932px;
-  
+
   width: 430px;
 }
 
 .container .title {
   height: 23px;
   left: 135px;
-  
+
   top: 78px;
   width: 159px;
 }
@@ -63,7 +63,7 @@
   left: 38px;
   letter-spacing: var(--paragraph-title-letter-spacing);
   line-height: var(--paragraph-title-line-height);
-  
+
   text-align: center;
   top: 1px;
   width: 124px;
@@ -83,7 +83,7 @@
   left: 162px;
   letter-spacing: var(--paragraph-title-letter-spacing);
   line-height: var(--paragraph-title-line-height);
-  
+
   text-align: center;
   text-shadow: 0px 4px 4px #00000040;
   top: 231px;
@@ -100,7 +100,6 @@
 .container .group-2 {
   height: 101px;
   left: 0;
-  
   top: 0;
   width: 100%;
   object-fit: cover;
@@ -115,7 +114,7 @@
   left: 30px;
   letter-spacing: 0;
   line-height: normal;
-  
+
   text-align: center;
   top: 110px;
 }
@@ -131,7 +130,7 @@
 .container .group-wrapper {
   height: 161px;
   left: 13px;
-  
+
   top: 429px;
 }
 
@@ -141,13 +140,12 @@
 
 .container .overlap-group {
   height: 161px;
-  
 }
 
 .container .group-3 {
   height: 103px;
   left: 0;
-  
+
   top: 0;
   width: 100%;
   object-fit: cover;
@@ -162,7 +160,7 @@
   left: 26px;
   letter-spacing: 0;
   line-height: normal;
-  
+
   text-align: center;
   top: 89px;
   width: 356px;
@@ -177,7 +175,7 @@
   left: 35px;
   letter-spacing: 0;
   line-height: normal;
-  
+
   text-align: center;
   text-shadow: 0px 4px 4px #00000040;
   top: 592px;
@@ -204,7 +202,7 @@
 .container .div-wrapper {
   height: 20px;
   left: 29px;
-  
+
   top: 729px;
   width: 363px;
   margin: auto;
@@ -219,7 +217,7 @@
   left: 0;
   letter-spacing: var(--paragraph-title-letter-spacing);
   line-height: var(--paragraph-title-line-height);
-  
+
   text-align: center;
   text-shadow: 0px 4px 4px #00000040;
   top: 0;
@@ -230,14 +228,14 @@
 .flex {
   padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .container .line {
   height: 2px;
   left: 0;
   object-fit: cover;
-  
+
   top: 882px;
   width: 100%;
 }
@@ -251,7 +249,7 @@
   left: 23px;
   letter-spacing: 0;
   line-height: normal;
-  
+
   text-align: center;
   top: 894px;
   width: 115px;
@@ -266,7 +264,7 @@
 .container .overlap-wrapper {
   height: 113px;
   left: 49px;
-  
+
   top: 764px;
   width: 142px;
 }
@@ -274,7 +272,7 @@
 .container .overlap-2 {
   background-color: #d9d9d9;
   height: 113px;
-  
+
   width: 140px;
 }
 
@@ -286,7 +284,7 @@
   left: 5px;
   letter-spacing: 0;
   line-height: normal;
-  
+
   text-align: center;
   top: 4px;
   width: 135px;
@@ -299,7 +297,7 @@
 .container .group-4 {
   height: 28px;
   left: 9px;
-  
+
   top: 81px;
 }
 
@@ -319,7 +317,7 @@
   left: 5px;
   letter-spacing: 0;
   line-height: normal;
-  
+
   text-align: center;
   top: 2px;
   width: 111px;
@@ -329,7 +327,7 @@
 .container .group-5 {
   height: 113px;
   left: 239px;
-  
+
   top: 764px;
   width: 142px;
 }
@@ -338,7 +336,7 @@
   background-color: var(--placeholder);
   height: 48px;
   left: 0;
-  
+
   top: 0;
   width: 430px;
 }
@@ -355,7 +353,7 @@
   left: -1px;
   letter-spacing: var(--promesse-letter-spacing);
   line-height: var(--promesse-line-height);
-  
+
   text-align: center;
   top: -2px;
   width: 80px;
@@ -370,7 +368,7 @@
 .container .sign-in {
   height: 35px;
   left: 305px;
-  
+
   top: 7px;
   width: 35px;
 }
@@ -379,4 +377,23 @@
   left: 376px !important;
   /* position: !important; */
   top: 14px !important;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subtext {
+  color: #000000;
+  font-family: "Roboto", Helvetica;
+  font-size: 12px;
+  font-weight: 600;
+  height: 44px;
+  left: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  text-align: center;
+  top: 110px;
 }

@@ -52,7 +52,6 @@ const register = async (req, res) => {
   const hash = await bcrypt.hash(password, 5);
   // Creation d'un nouvel utilisateur
   const id = await userServices.createUser(firstName, lastName, email, hash);
-  //TODO addTODO pour tout les programme de cette user
 
   if (!id) {
     res.sendStatus(500);

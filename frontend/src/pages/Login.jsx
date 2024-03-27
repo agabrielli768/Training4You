@@ -6,20 +6,11 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 //composant de connexion
-function Login () {
-  const navigate =  useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  useEffect(() => {
-    // Vérification du token lors du chargement de la page
-    const token = localStorage.getItem('token');
-
-    if (token) {
-      // Redirection vers la page sécurisée si le token est présent
-      navigate();
-    }
-  }, [navigate]);
+function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   //fonction qui est appelé lors de la soumission du formulaire
   const handleSubmit = async (evt) => {
@@ -27,19 +18,23 @@ function Login () {
     evt.preventDefault();
     //recupération des données du formulaire
     try {
-      const reponse = await axios.post("http://localhost:3001/auth/login", { email, password });
-      localStorage.setItem('token', reponse.data)
-      navigate ("/dashboard") 
-      
+      const reponse = await axios.post("http://localhost:3001/auth/login", {
+        email,
+        password,
+      });
+      localStorage.setItem("token", reponse.data);
+      navigate("/dashboard");
     } catch (error) {
-      setError('Une erreur s\'est produite lors de la connexion. Veuillez réessayer.');
+      setError(
+        "Une erreur s'est produite lors de la connexion. Veuillez réessayer."
+      );
     }
-  }
-    
-      return (
+  };
+
+  return (
     <div>
       <h2>Connexion</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Email:
