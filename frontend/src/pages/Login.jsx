@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 //redirige l'utilisateur vers sa page d'accueil
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 //composant de connexion
